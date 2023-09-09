@@ -1,0 +1,5 @@
+{
+  "secret_key": "SCBTEST-SECRET-KEY",
+  "tokey_expiration": "14d",
+  "encryption_key": "SCBTEST-SECRET-KEY"
+}

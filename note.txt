@@ -1,0 +1,2 @@
+auto generate model from database
+./node_modules/.bin/sequelize-auto -h localhost -d appointment -u root -x root -p 5432 -e postgres -o models
