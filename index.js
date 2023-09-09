@@ -19,22 +19,16 @@ app.use(errorHandler);
 // import database
 const db = require("./configs/database");
 
-// test connection database
-const testDbConnection = async () => {
+app.get('/api/health', async function (req, res) {
     try {
         await db.authenticate();
-        console.log("Connection has been established successfully.");
+        // console.log("Connection has been established successfully.");
+        res.status(200).send("Ok");
     } catch (error) {
-        console.error("Unable to connect to the database:", error);
+        // console.error("Unable to connect to the database:", error);
+        res.status(500).send("Fail");
     }
-};
-
-testDbConnection();
-
-app.get('/', function (req, res) {
-    res.send("OK")
 })
-
 app.use('/api/appointment', require('./routers/appointment.router'))
 app.use('/api/status', require('./routers/status.router'))
 app.use('/api/user', require('./routers/user.router'))

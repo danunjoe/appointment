@@ -14,8 +14,8 @@ const password = process.env.DB_PASS
 const Sequelize = require('sequelize')
 const sequelize = new Sequelize(dbname, username, password, {
   host: dbhost,
+  port: dbport,
   dialect: 'postgres',
-
   timezone: "+07:00",
 })
 
