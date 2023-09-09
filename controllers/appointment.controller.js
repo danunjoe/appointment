@@ -31,7 +31,7 @@ exports.list = async function (req, res) {
         // get status
         let resStatus = await statusService.getAll();
 
-        // get appoitment
+        // get appointments
         let resAppointment = await appointmentService.getAll(pageSkip, pageSize);
         if (resAppointment && resAppointment.rows && resAppointment.rows.length > 0) {
 
