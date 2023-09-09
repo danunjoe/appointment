@@ -6,10 +6,10 @@ Database => docker build -f Dockerfile.db -t appointment-db .
 App => docker build -f Dockerfile.app -t appointment-app .  
 
 # Run Docker Image
-Database =>
+Database => \
 docker run -d --name appointment-db -p 5432:5432 appointment-db  
 
-App =>
+App => \
 docker run -d \
 -e DB_DATABASE='appointment' \
 -e DB_HOST='docker.for.mac.host.internal' \
