@@ -1,5 +1,20 @@
-# appointment
-For Test
+# Appointment Services
+Appointment Services
+1. List = รายการนัดหมาย
+2. Retreive = รายเอียดการนัดหมาย
+3. Comment = การเพิ่มความเห็นของการนัดหมาย
+4. Archive = จัดเก็บการนัดหมาย
+5. UpdateStatus = อัปเดทสถานะการนัดหมาย
+
+Status Services
+1. List = รายการสถานะทั้งหมด
+
+User Services
+1. Authen = ยืนยันตัวตนและ get token เพื่อใช้บันทึกข้อมูลผู้ดำเนินการในขั้นตอน Comment, Archive, UpdateStatus
+2. List = รายการผู้ใช้งาน
+
+Health Check Service
+1. Health = ตรวจสอบสถานะการเชื่อมต่อฐานข้อมูล
 
 # Build Docker Image
 Database => docker build -f Dockerfile.db -t appointment-db .  
@@ -20,5 +35,5 @@ docker run -d \
 --name appointment-app appointment-app
 
 # Coding
-auto generate models from database
-=> ./node_modules/.bin/sequelize-auto -h localhost -d appointment -u root -x root -p 5432 -e postgres -o models
+auto generate models from database \ 
+./node_modules/.bin/sequelize-auto -h localhost -d appointment -u root -x root -p 5432 -e postgres -o models
