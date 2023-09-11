@@ -28,10 +28,6 @@ exports.list = async function (req, res) {
             pageSkip = (page - 1) * pageSize;
         }
 
-        // get status
-        let resStatus = await statusService.getAll();
-
-        // get appointments
         let resAppointment = await appointmentService.getAll(pageSkip, pageSize);
         if (resAppointment && resAppointment.rows && resAppointment.rows.length > 0) {
 
@@ -40,19 +36,11 @@ exports.list = async function (req, res) {
 
             list = resAppointment.rows.map(item => {
 
-                let statusName = "";
-                if (resStatus && resStatus.length > 0) {
-                    let findStatus = resStatus.find(x => x.id === item.status_id);
-                    if (findStatus) {
-                        statusName = findStatus.name;
-                    }
-                }
-
                 return {
                     id: item.uid,
                     name: item.name,
-                    status_id: item.status_id,
-                    status_name: statusName,
+                    status_id: item.status.id,
+                    status_name: item.status.name,
                     created_dt: item.created_dt,
                     created_by_name: item.created_by_name,
                     updated_dt: item.updated_dt,

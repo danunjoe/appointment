@@ -1,6 +1,7 @@
 // const { Op } = require("sequelize");
 
 // import database
+const { where } = require("sequelize");
 const db = require("../configs/database");
 
 const initModels = require("../models/init-models");
@@ -10,6 +11,13 @@ var models = initModels(db);
 async function getAll(pageSkip, pageSize) {
     let res = await models.appointment
         .findAndCountAll({
+            include: [
+                {
+                    model: models.status,
+                    require: true,
+                    as: 'status',
+                }
+            ],
             where: {
                 is_archived: false,
                 is_active: true
@@ -81,6 +89,7 @@ async function archive(user, data) {
 }
 
 async function comment(user, data) {
+
     const transaction = await db.transaction();
     try {
         let resAppointment = await models.appointment.findOne({

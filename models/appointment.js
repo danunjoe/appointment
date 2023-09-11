@@ -22,7 +22,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     status_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'status',
+        key: 'id'
+      }
     },
     is_archived: {
       type: DataTypes.BOOLEAN,

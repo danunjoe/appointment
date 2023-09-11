@@ -12,6 +12,8 @@ function initModels(sequelize) {
 
   appointment_comment.belongsTo(appointment, { as: "appointment", foreignKey: "appointment_id"});
   appointment.hasMany(appointment_comment, { as: "appointment_comments", foreignKey: "appointment_id"});
+  appointment.belongsTo(status, { as: "status", foreignKey: "status_id"});
+  status.hasMany(appointment, { as: "appointments", foreignKey: "status_id"});
 
   return {
     appointment,
