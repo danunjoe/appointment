@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "5b7f456a-c205-4d2c-af2f-ecc6357693f5",
+		"name": "Appointments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7577837"
+	},
+	"item": [
+		{
+			"name": "AppointmentList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/api/appointment/list?offset=1&limit=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"appointment",
+						"list"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AppointmentRetreive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/api/appointment/retreive/7596f251-47d3-4e18-b651-4852933382bd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"appointment",
+						"retreive",
+						"7596f251-47d3-4e18-b651-4852933382bd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AppointmentComment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IuC5geC4muC4l-C5geC4oeC4mSIsImVtYWlsIjoidXNlcjJAcm9iaW5ob29kLmNvLnRoIiwiaWF0IjoxNjk0MjQzNTc3LCJleHAiOjE2OTU0NTMxNzd9.celc1xgm7W08naAKopb76WmIEOJlioXylz3vzYgYbvw",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "jXSGszEmnRLC66jF7M1cn81KEIodWJCkwkLULZF7O1w%3D",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"appointment_id\": \"7596f251-47d3-4e18-b651-4852933382bd\",\n  \"comment\": \"ทดสอบ\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/appointment/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"appointment",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AppointmentArchive",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IuC5guC4o-C4muC4tOC4meC4ruC4ueC5ieC4lCIsImVtYWlsIjoidXNlcjFAcm9iaW5ob29kLmNvLnRoIiwiaWF0IjoxNjk0MjM2MjA4LCJleHAiOjE2OTU0NDU4MDh9.QVI2rCJwjXwA9342AL9ebMuWFp5Az8AHgv51OTkFlAM",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "jXSGszEmnRLC66jF7M1cn81KEIodWJCkwkLULZF7O1w%3D",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"appointment_id\": \"7596f251-47d3-4e18-b651-4852933382bd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/appointment/archive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"appointment",
+						"archive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AppointmentUpdateStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IuC5guC4o-C4muC4tOC4meC4ruC4ueC5ieC4lCIsImVtYWlsIjoidXNlcjFAcm9iaW5ob29kLmNvLnRoIiwiaWF0IjoxNjk0MjM2MjA4LCJleHAiOjE2OTU0NDU4MDh9.QVI2rCJwjXwA9342AL9ebMuWFp5Az8AHgv51OTkFlAM",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "jXSGszEmnRLC66jF7M1cn81KEIodWJCkwkLULZF7O1w%3D",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"appointment_id\": \"7596f251-47d3-4e18-b651-4852933382bd\",\n  \"status_id\": \"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/appointment/updatestatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"appointment",
+						"updatestatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StatusList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/api/status/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"status",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/api/user/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserCreate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test\",\n  \"email\": \"test6@gmail.com\",\n  \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserAuthen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"user2@robinhood.co.th\",\n  \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/user/authen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"user",
+						"authen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/api/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
