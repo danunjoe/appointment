@@ -69,8 +69,4 @@ describe("Appointment Services", () => {
         expect(response.body.status).toEqual(true);
     });
 
-    
-    // afterEach(async() => { 
-    //     await app.close();
-    // });
 });

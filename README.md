@@ -18,3 +18,7 @@ docker run -d \
 -e DB_PASS='root' \
 -p 3201:3200 \
 --name appointment-app appointment-app
+
+# Coding
+auto generate models from database
+=> ./node_modules/.bin/sequelize-auto -h localhost -d appointment -u root -x root -p 5432 -e postgres -o models
